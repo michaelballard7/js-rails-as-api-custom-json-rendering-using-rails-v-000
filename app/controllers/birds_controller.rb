@@ -10,14 +10,12 @@ class BirdsController < ApplicationController
           @bird = Bird.find_by(id: params[:id])
           #   render json: @bird, only: [:id, :name]
           render json: @bird, except: [:created_at, :updated_at]
-
-
       else
           render json: {message: 'Bird not found'}
       end
-      
-    
+
+
   end
 
-  
+
 end
